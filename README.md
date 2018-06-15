@@ -1,0 +1,2 @@
+- Run npm install
+- Run node index.js or node test.js
