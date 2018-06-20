@@ -11,3 +11,8 @@ async function run() {
 }
 
 run();
+const test = await page.$x(`//td[select]/select`);
+const text = await page.evaluate(el => {
+	return el;
+}, test);
+console.log(text);
