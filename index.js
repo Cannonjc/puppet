@@ -11,17 +11,3 @@ async function run() {
 }
 
 run();
-const test = await page.$x(`//td[select]/select`);
-const text = await page.evaluate(el => {
-	return el;
-}, test);
-console.log(text);
-// const links = await page.evaluate(() => {
-// 	const records = document.evaluate('//table[2]//tr[td[a]]', document, null, XPathResult.ANY_TYPE, null);
-// 	// records = document.$x('//table[2]//tr[td[a]]');
-// 	return records
-// 	// return records.map(record => record.getElementsByTagName('td')[0].children[0]);
-// })
-// for (let linc in links) {
-// 	console.log(linc);
-// }
