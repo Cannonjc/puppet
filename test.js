@@ -31,7 +31,7 @@ async function run() {
 		return results;
 	}, linksXPath);
 	const basePic = await page.screenshot({fullPage: true});
-	let baseBody = await page.evaluate(() => document.body.innerHTML);
+	let baseBody = await page.content();
 	let int = 0;
 	for (i = 0; i < links.length; i++) {
 		await Promise.all([
@@ -45,7 +45,7 @@ async function run() {
 		let basePicPath = "screenshots/item"+int+"/base/base.png";
 
 		await page.screenshot({path: "screenshots/item"+int+"/record/record.png", fullPage: true});
-		let recordBody = await page.evaluate(() => document.body.innerHTML);
+		let recordBody = await page.content();
 		await saveFile(recordPath, recordBody);
 
 		await Promise.all([
